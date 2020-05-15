@@ -4,10 +4,10 @@ https://review.opendev.org/#/c/721517/12/doc/source/developer_resources/build_gu
 https://docs.starlingx.io/developer_resources/Layered_Build.html
 
 
-Step.0 检查基本条件 下载安装工具 准备构建环境 
-  0.a) 更新os 
-  0.b) 创建使用者
-  0.c) 安装依赖 
+Step.0 检查基本条件 下载安装工具 准备构建环境\n 
+  0.a) 更新os\n
+  0.b) 创建使用者\n
+  0.c) 安装依赖\n
 
 Step.1 构建"基础构建镜像"
   1.d) 下载starlingx/tool 并用此安装
