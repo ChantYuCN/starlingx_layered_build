@@ -23,13 +23,26 @@ Step.3 构建Starlingx安装包
   3.)  
   
   
-cd $HOME 
+sudo apt-get update  
+sudo apt-get install make git curl
+sudo apt-get remove docker docker-engine docker.io  
+sudo apt-get install apt-transport-https ca-certificates curl gnupg2 software-properties-common  
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -  
+sudo add-apt-repository \  
+   "deb [arch=amd64] https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/ubuntu \  
+   $(lsb_release -cs) \  
+   stable"  
+sudo apt-get update  
+sudo apt-get install docker-ce  
+sudo usermod -aG docker yuchengde 
+  
+cd $HOME  
 git clone https://opendev.org/starlingx/tools.git  
 cd $HOME/tools/  
 vim localrc  
        # tbuilder localrc  
-       MYUNAME=<your user name>  
-       PROJECT=<project name>  
+       MYUNAME=yuchengde  
+       PROJECT=starlingx  
        HOST_PREFIX=$HOME/starlingx/workspace  
        HOST_MIRROR_DIR=$HOME/starlingx/mirror  
 sudo ./tb.sh create  
