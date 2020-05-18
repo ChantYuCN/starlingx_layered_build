@@ -62,7 +62,7 @@ export LAYER=flock
 cd  $MY_REPO_ROOT_DIR  
 echo “LAYER=$LAYER” >> stx-tools/localrc  
 cd  $MY_REPO_ROOT_DIR/stx-tools/centos-mirror-tools  
-download_mirror.sh -c ./yum.conf.sample -n -g  
+sudo download_mirror.sh -c ./yum.conf.sample -n -g  
 ln -s /import/mirrors/CentOS/stx-r1/CentOS/downloads/ $MY_REPO/stx/  
 populate_downloads.sh /import/mirrors/CentOS/stx-r1/CentOS/  
 generate-cgcs-centos-repo.sh /import/mirrors/CentOS/stx-r1/CentOS/  
