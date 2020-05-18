@@ -56,6 +56,33 @@ ssh-add
   
 cd $MY_REPO_ROOT_DIR  
 export REPO_URL='https://mirrors.tuna.tsinghua.edu.cn/git/git-repo'  
+
+repo init -u https://opendev.org/starlingx/manifest.git -b master -m compiler.xml  
+repo sync  
+export LAYER=compiler  
+cd  $MY_REPO_ROOT_DIR  
+echo “LAYER=$LAYER” >> stx-tools/localrc  
+cd  $MY_REPO_ROOT_DIR/stx-tools/centos-mirror-tools  
+download_mirror.sh  
+ln -s /import/mirrors/CentOS/stx-r1/CentOS/downloads/ $MY_REPO/stx/  
+populate_downloads.sh /import/mirrors/CentOS/stx-r1/CentOS/  
+generate-cgcs-centos-repo.sh /import/mirrors/CentOS/stx-r1/CentOS/  
+build-pkgs  
+build-pkgs --installer  
+
+repo init -u https://opendev.org/starlingx/manifest.git -b master -m distro.xml
+repo sync
+export LAYER=distro  
+cd  $MY_REPO_ROOT_DIR  
+echo “LAYER=$LAYER” >> stx-tools/localrc  
+cd  $MY_REPO_ROOT_DIR/stx-tools/centos-mirror-tools  
+download_mirror.sh  
+ln -s /import/mirrors/CentOS/stx-r1/CentOS/downloads/ $MY_REPO/stx/  
+populate_downloads.sh /import/mirrors/CentOS/stx-r1/CentOS/  
+generate-cgcs-centos-repo.sh /import/mirrors/CentOS/stx-r1/CentOS/  
+build-pkgs  
+build-pkgs --installer  
+
 repo init -u https://opendev.org/starlingx/manifest.git -b master -m flock.xml 
 repo sync  
 export LAYER=flock  
