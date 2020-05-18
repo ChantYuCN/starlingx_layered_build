@@ -59,6 +59,7 @@ export REPO_URL='https://mirrors.tuna.tsinghua.edu.cn/git/git-repo'
 repo init -u https://opendev.org/starlingx/manifest.git -b master -m flock.xml 
 repo sync  
 export LAYER=flock  
+cd  $MY_REPO_ROOT_DIR  
 echo “LAYER=$LAYER” >> stx-tools/localrc  
 cd  $MY_REPO_ROOT_DIR/stx-tools/centos-mirror-tools  
 download_mirror.sh -c ./yum.conf.sample -n -g  
