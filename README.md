@@ -55,11 +55,12 @@ eval $(ssh-agent)
 ssh-add  
   
 cd $MY_REPO_ROOT_DIR  
-repo init -u https://opendev.org/starlingx/manifest.git -b master -m flock.xml  
+export REPO_URL='https://mirrors.tuna.tsinghua.edu.cn/git/git-repo'  
+repo init -u https://opendev.org/starlingx/manifest.git -b master -m flock.xml 
 repo sync  
 export LAYER=flock  
 echo “LAYER=$LAYER” >> stx-tools/localrc  
-cd /stx-tools/centos-mirror-tools  
+cd stx-tools/centos-mirror-tools  
 download_mirror.sh -c ./yum.conf.sample -n -g  
 ln -s /import/mirrors/CentOS/stx-r1/CentOS/downloads/ $MY_REPO/stx/  
 populate_downloads.sh /import/mirrors/CentOS/stx-r1/CentOS/  
