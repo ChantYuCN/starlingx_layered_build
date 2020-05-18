@@ -34,7 +34,8 @@ sudo add-apt-repository \
    stable"  
 sudo apt-get update  
 sudo apt-get install docker-ce  
-sudo usermod -aG docker yuchengde 
+sudo usermod -aG docker yuchengde  
+docker login  
   
 cd $HOME  
 git clone https://opendev.org/starlingx/tools.git  
