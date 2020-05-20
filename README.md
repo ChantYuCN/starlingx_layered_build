@@ -46,7 +46,7 @@ vim localrc
        PROJECT=starlingx  
        HOST_PREFIX=$HOME/starlingx/workspace  
        HOST_MIRROR_DIR=$HOME/starlingx/mirror  
-sudo ./tb.sh create  
+bash tb.sh create  
 bash tb.sh env  
 bash tb.sh run  
 bash tb.sh exec  
