@@ -70,7 +70,7 @@ generate-cgcs-centos-repo.sh /import/mirrors/CentOS/stx-r1/CentOS/
 build-pkgs  
 build-pkgs --installer  
 
-repo init -u https://opendev.org/starlingx/manifest.git -b master -m distro.xml
+repo init -u https://opendev.org/starlingx/manifest.git -b master -m distro.xml  
 repo sync
 export LAYER=distro  
 cd  $MY_REPO_ROOT_DIR  
