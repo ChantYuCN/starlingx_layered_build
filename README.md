@@ -71,7 +71,7 @@ build-pkgs
 build-pkgs --installer  
 
 repo init -u https://opendev.org/starlingx/manifest.git -b master -m distro.xml  
-repo sync
+repo sync  
 export LAYER=distro  
 cd  $MY_REPO_ROOT_DIR  
 echo “LAYER=$LAYER” >> stx-tools/localrc  
@@ -83,7 +83,7 @@ generate-cgcs-centos-repo.sh /import/mirrors/CentOS/stx-r1/CentOS/
 build-pkgs  
 build-pkgs --installer  
 
-repo init -u https://opendev.org/starlingx/manifest.git -b master -m flock.xml 
+repo init -u https://opendev.org/starlingx/manifest.git -b master -m flock.xml  
 repo sync  
 export LAYER=flock  
 cd  $MY_REPO_ROOT_DIR  
