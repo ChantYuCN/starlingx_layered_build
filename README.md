@@ -64,6 +64,11 @@ cd  $MY_REPO_ROOT_DIR
 echo “LAYER=$LAYER” >> stx-tools/localrc  
 cd  $MY_REPO_ROOT_DIR/stx-tools/centos-mirror-tools  
 sudo bash download_mirror.sh  
+exit  
+cd $HOME/starlingx/mirror/CentOS/  
+cp -r $HOME/starlingx/workspace/localdisk/designer/<user>/<project>/stx-tools/centos-mirror-tools/output/stx-r1 .  
+cd $HOME/tools/  
+bash tb.sh exec  
 ln -s /import/mirrors/CentOS/stx-r1/CentOS/downloads/ $MY_REPO/stx/  
 populate_downloads.sh /import/mirrors/CentOS/stx-r1/CentOS/  
 generate-cgcs-centos-repo.sh /import/mirrors/CentOS/stx-r1/CentOS/  
